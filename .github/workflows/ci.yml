@@ -26,7 +26,7 @@ jobs:
         run: hugo
 
       - name: Scan the host key
-        run: mkdir -p ~/.ssh/ && ssh-keyscan -H $DEPLOY_SERVER -p $DEPLOY_PORT >> ~/.ssh/known_hosts
+        run: mkdir -p ~/.ssh/ && ssh-keyscan -p $DEPLOY_PORT -H $DEPLOY_SERVER >> ~/.ssh/known_hosts
         env:
           DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
           DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
