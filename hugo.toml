@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://cicdtest.shibby.xyz/'
 languageCode = 'en-us'
 title = 'Testing Github CI/CD'
 theme = 'ananke'
