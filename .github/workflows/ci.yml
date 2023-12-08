@@ -17,7 +17,7 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       
       - name: Install Hugo
-        run: sudo apt install hugo
+        run: sudo snap install hugo
 
       - name: Check dir
         run: pwd && ls
