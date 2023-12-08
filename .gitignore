@@ -1,7 +1,10 @@
 ### Hugo ###
 # Generated files by hugo
-public/
+/public/
 /resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
 
 ### Code ###
 .vscode/*
@@ -9,6 +12,14 @@ public/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# Temporary lock file while building
+/.hugo_build.lock
+
+# other dev files
+xconfig.toml
+tabs.txt
+tabs.md
 
 ### Vim ###
 # Swap
