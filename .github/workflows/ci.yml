@@ -18,12 +18,9 @@ jobs:
       
       - name: Install Hugo
         run: sudo snap install hugo
-
-      - name: Check dir
-        run: pwd && ls
-
+        
       - name: Build the website
-        run: hugo
+        run: hugo --cleanDestinationDir
 
       - name: Scan the host key
         run: mkdir -p ~/.ssh/ && ssh-keyscan -p $DEPLOY_PORT -H $DEPLOY_SERVER >> ~/.ssh/known_hosts
