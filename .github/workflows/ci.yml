@@ -10,6 +10,9 @@ jobs:
     steps:
       - name: Checkout the current branch
         uses: actions/checkout@v3
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
       - name: Initialize the ssh-agent
         uses: webfactory/ssh-agent@v0.4.1
@@ -18,9 +21,9 @@ jobs:
       
       - name: Install Hugo
         run: sudo snap install hugo
-        
+
       - name: Build the website
-        run: hugo --cleanDestinationDir
+        run: hugo --minify
 
       - name: Scan the host key
         run: mkdir -p ~/.ssh/ && ssh-keyscan -p $DEPLOY_PORT -H $DEPLOY_SERVER >> ~/.ssh/known_hosts
